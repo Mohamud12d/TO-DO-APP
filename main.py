@@ -128,7 +128,7 @@ def search_by_name():
 
 def menu():
     while True:
-        print("------- Welcome to TODO APP ---------")
+        print("------->>>> Welcome to simple TODO APP <<<<-------")
         print("1.add task")
         print("2.show task")
         print("3.delete task")
