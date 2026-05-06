@@ -89,42 +89,6 @@ def complete_task():
             print("invalid task number")
 
 
-def edit_priority():
-    show_tasks()
-    index = int(input("enter the number of task: "))
-    if 0 <= index - 1 < len(tasks):
-        priority = input("Priority (High / Medium / Low): ").capitalize()
-        tasks[index - 1]["priority"] = priority
-        tasks[index - 1]["time"] = datetime.now().isoformat()
-        save_task()
-    else:
-        print("invalid input")
-
-
-def show_done_task():
-    if not tasks:
-        print("no tasks valid")
-    else:
-        for i, task in enumerate(tasks, 1):
-
-            if task["status"] == "done":
-                time_obj = datetime.fromisoformat(task["time"])
-                time_str = time_obj.strftime("%I:%M %p").lstrip("0")
-                print(
-                    f"{i}. task: {task['task']} | status: {task['status']} | priority: {task['priority']} | Categories{task['Categories']} |  time: {time_str}"
-                )
-
-
-def search_by_name():
-    task_name = input("enter task name: ").lower()
-    for i, task in enumerate(tasks, 1):
-        if task["task"].lower()== task_name:
-            time_obj = datetime.fromisoformat(task["time"])
-            time_str = time_obj.strftime("%I:%M %p").lstrip("0")
-            print(
-                f"{i}. task: {task['task']} | status: {task['status']} | priority: {task['priority']} |Categories: {task['Categories']} | time: {time_str}"
-            )
-
 
 def menu():
     while True:
